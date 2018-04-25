@@ -4,11 +4,6 @@
   :init
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
-  :config
-  (ivy-mode 1)
-  (counsel-mode 1)
-  (setq ivy-use-virtual-buffers t
-	ivy-count-format "%d/%d ")  
   :bind
   (("M-x" . counsel-M-x)
    ("C-x C-f" . counsel-find-file)
@@ -27,29 +22,48 @@
    :map read-expression-map
    ("C-r" . counsel-expression-history)
    )
-  )
-(use-package ivy-hydra
-  :pin melpa-stable)
-(use-package counsel-gtags
-  :pin melpa-stable)
-(use-package counsel-projectile
   :config
-  (counsel-projectile))
+  (ivy-mode 1)
+  (counsel-mode 1)
+  (setq ivy-use-virtual-buffers t
+        ivy-count-format "%d/%d ")    
+  (use-package ivy-hydra
+    :pin melpa-stable)
+  (use-package counsel-gtags
+    :pin melpa-stable)
+  (use-package counsel-projectile
+    :config
+    (counsel-projectile))
+  )
+
+(use-package yasnippet
+  :diminish yas-minor-mode
+  :bind (:map yas-minor-mode-map
+	      ("C-x i i" . yas-insert-snippet)
+	      ("C-x i n" . yas-new-snippet)
+	      ("C-x i v" . yas-visit-snippet-file)
+	      ("C-x i g" . yas-reload-all))
+  :init
+  (use-package yasnippet-snippets)
+  :config
+  (yas-reload-all)
+  (yas-global-mode 1)
+  )
 
 (use-package company
   :pin melpa-stable
   :diminish company-mode
   :demand t
   :bind (("C-c /" . company-files)
-	 ("C-M-i" . company-complete)
-	 :map company-active-map
-	 ("C-s" . company-filter-candidates)
-	 ("C-n" . company-select-next)
-	 ("C-p" . company-select-previous)
-	 ("C-i" . company-complete-selection)
-	 :map company-search-map
-	 ("C-n" . company-select-next)
-	 ("C-p" . company-select-previous))
+         ("C-M-i" . company-complete)
+         :map company-active-map
+         ("C-s" . company-filter-candidates)
+         ("C-n" . company-select-next)
+         ("C-p" . company-select-previous)
+         ("C-i" . company-complete-selection)
+         :map company-search-map
+         ("C-n" . company-select-next)
+         ("C-p" . company-select-previous))
   :config
   (global-company-mode +1)
   (setq company-dabbrev-downcase nil)
@@ -59,6 +73,15 @@
    '(company-selection-wrap-around t)
    '(company-dabbrev-downcase nil)
    '(company-dabbrev-ignore-case 'nil))
+  ;; Add yasnippet support for all company backends
+  ;; https://github.com/syl20bnr/spacemacs/pull/179
+  (defvar company-mode/enable-yas t
+    "Enable yasnippet for all backends.")
+  (defun company-mode/backend-with-yas (backend)
+    (if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
+	backend
+      (append (if (consp backend) backend (list backend))
+	      '(:with company-yasnippet))))
   )
 ;; backends for company
 (use-package company-shell
@@ -70,8 +93,12 @@
 (use-package company-quickhelp
   :bind
   (:map company-active-map
-	("C-c h" . company-quickhelp-manual-begin))
+        ("C-c h" . company-quickhelp-manual-begin))
   :config
   (company-quickhelp-mode)
+  )
+(use-package hippie-exp
+  :config
+  (add-to-list 'hippie-expand-try-functions-list 'yas-hippie-try-expand)
   )
 ;; 02_completion.el ends here
