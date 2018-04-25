@@ -23,7 +23,7 @@
 ** inits directory numbering policy
 
 - 00-09 :: Very common settings (language, completion, and so on)
-- 10-19 :: Emacs settings (git, bm, hydra, and so on)
+- 10-19 :: Emacs settings (git, bm, and so on)
 - 20-29 :: Programming settings
 - 30-39 :: Spelling and checking
 - 40-49 :: Useful tool for some modes
