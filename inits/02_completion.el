@@ -31,9 +31,9 @@
     :pin melpa-stable)
   (use-package counsel-gtags
     :pin melpa-stable)
-  (use-package counsel-projectile
-    :config
-    (counsel-projectile))
+  ;; (use-package counsel-projectile
+  ;;   :config
+  ;;   (counsel-projectile))
   )
 
 (use-package yasnippet
