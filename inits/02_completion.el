@@ -35,4 +35,43 @@
 (use-package counsel-projectile
   :config
   (counsel-projectile))
+
+(use-package company
+  :pin melpa-stable
+  :diminish company-mode
+  :demand t
+  :bind (("C-c /" . company-files)
+	 ("C-M-i" . company-complete)
+	 :map company-active-map
+	 ("C-s" . company-filter-candidates)
+	 ("C-n" . company-select-next)
+	 ("C-p" . company-select-previous)
+	 ("C-i" . company-complete-selection)
+	 :map company-search-map
+	 ("C-n" . company-select-next)
+	 ("C-p" . company-select-previous))
+  :config
+  (global-company-mode +1)
+  (setq company-dabbrev-downcase nil)
+  (custom-set-variables
+   '(company-minimum-prefix-length 3)
+   '(company-idle-delay 0)
+   '(company-selection-wrap-around t)
+   '(company-dabbrev-downcase nil)
+   '(company-dabbrev-ignore-case 'nil))
+  )
+;; backends for company
+(use-package company-shell
+  :config
+  (add-to-list 'company-backends 'company-shell))
+(use-package company-web
+  :config
+  (add-to-list 'company-backends 'company-web-html))
+(use-package company-quickhelp
+  :bind
+  (:map company-active-map
+	("C-c h" . company-quickhelp-manual-begin))
+  :config
+  (company-quickhelp-mode)
+  )
 ;; 02_completion.el ends here
