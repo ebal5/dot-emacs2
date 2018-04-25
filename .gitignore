@@ -1,0 +1,7 @@
+*~
+\#*\#
+elpa/
+*.elc
+*.data
+/first
+/.recentf

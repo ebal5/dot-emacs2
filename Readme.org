@@ -1,0 +1,32 @@
+#+TITLE: Readme for .emacs files
+#+AUTHOR: eval
+#+Date: 2018/04/24
+
+* Nth version of my Emacs settings
+
+  Until now, I do not use Spacemacs.
+  
+  I think Vim's keybindings is very smart and fast for
+  programming and any other works on Editor.
+  
+  But... I like Emacs as Envilonment. Many people think so,
+  there is Spacemacs as I think.
+
+* File lists...
+
+  - Readme.org :: Document for this settings
+  - init.el :: top loader of settings
+  - elpa/ :: files installed from package.el
+  - inits/ :: files wrote by me
+
+
+** inits directory numbering policy
+
+- 00-09 :: Very common settings (language, completion, and so on)
+- 10-19 :: Emacs settings (git, bm, hydra, and so on)
+- 20-29 :: Programming settings
+- 30-39 :: Spelling and checking
+- 40-49 :: Useful tool for some modes
+- 70-79 :: CUI only settings
+- 80-89 :: GUI only settings
+- 90-99 :: Machine local settings
