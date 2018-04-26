@@ -1,6 +1,6 @@
 ;;; Code::
 (use-package counsel
-  :diminish ivy-mode
+  :diminish ivy-mode counsel-mode
   :init
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
