@@ -75,6 +75,6 @@
    ((my/font-exists-p "Myrica")
     (my/use-font 14 "Myrica" "Myrica"))
    )
-  (use-package emoji-cheat-sheet)
+  (use-package emojify)
   )
 ;;; 80_default.el ends here
