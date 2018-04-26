@@ -5,3 +5,4 @@ elpa/
 *.data
 /first
 /.recentf
+*.eld

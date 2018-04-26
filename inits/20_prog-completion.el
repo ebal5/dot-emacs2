@@ -3,7 +3,7 @@
   (use-package ycmd
     :config
     (add-hook 'after-init-hook #'global-ycmd-mode)
-    (set-variable 'ycmd-server-command '("python" "/usr/share/vim/vimfiles/third_party/ycmd/ycmd/"))
+    (set-variable 'ycmd-server-command '("python2" "/usr/share/vim/vimfiles/third_party/ycmd/ycmd/"))
     (set-variable 'ycmd-global-config "/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py")
     (use-package company-ycmd
       :init
