@@ -62,11 +62,12 @@
       (set-fontset-font nil '(#x0370 . #x03FF) fontspec)
       ))
   (cond
+   ((my/font-exists-p "Cica")
+    (my/use-font 12 "Cica" "Cica"))
    ((my/font-exists-p "Ricty Discord")
-    (my/use-font 14 "Ricty Discord" "Ricty Discord")
-    )
-   ((my/font-exists-p "Ricty Diminished")
     (my/use-font 14 "Ricty Discord" "Ricty Discord"))
+   ((my/font-exists-p "Ricty Diminished")
+    (my/use-font 14 "Ricty Diminished" "Ricty Diminished"))
    ((my/font-exists-p "Migu 1M")
     (my/use-font 14 "Migu 1M" "Migu 1M"))
    ((my/font-exists-p "Migu 2M")
@@ -74,5 +75,6 @@
    ((my/font-exists-p "Myrica")
     (my/use-font 14 "Myrica" "Myrica"))
    )
+  (use-package emoji-cheat-sheet)
   )
 ;;; 80_default.el ends here
