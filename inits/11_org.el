@@ -103,8 +103,6 @@
   (setq org-present-text-scale 5)
   )
 
-(use-package ox-qmd)
-(use-package ox-gfm)
 (use-package ox-pandoc
   :if (executable-find "pandoc")
   )
