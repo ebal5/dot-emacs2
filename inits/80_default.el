@@ -75,6 +75,17 @@
    ((my/font-exists-p "Myrica")
     (my/use-font 14 "Myrica" "Myrica"))
    )
-  (use-package emojify)
+  (use-package emojify
+    :config
+    (add-hook 'after-init-hook #'global-emojify-mode)
+    (setq emojify-company-tooltips-p t)
+    (emojify-set-emoji-styles '(github))
+    (use-package company-emoji
+      :config
+      (add-to-list 'company-backends 'company-emoji)))
   )
+;; (car (seq-filter (lambda (ls)
+;;               (string-equal "github" (aref (cadr ls) 2)))
+;;                  (emojify-list-entries)))
+;; (#(":flag_se:" 0 1 (idx 0)) ["Sweden" #(":flag_se:" 0 1 (idx 0)) "github" "No" #(":flag_se:" 0 1 (idx 0)) 5489])
 ;;; 80_default.el ends here
