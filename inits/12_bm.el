@@ -13,13 +13,11 @@
                                  (bm-repository-save)))
   (add-hook 'after-save-hook #'bm-buffer-save)
   (add-hook 'after-revert-hook #'bm-buffer-restore)
-  (if (package-installed-p 'hydra)
-      (defhydra my-hydra/bm (global-map "C-.")
-        "For bm.el use."
-        ("t" bm-toggle)
-        ("n" bm-next)
-        ("p" bm-previous)
-        )
+  (defhydra my-hydra/bm (global-map "C-.")
+    "For bm.el use."
+    ("t" bm-toggle)
+    ("n" bm-next)
+    ("p" bm-previous)
     )
   :init
   (setq bm-restore-repository-on-load t)
