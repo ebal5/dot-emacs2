@@ -48,6 +48,7 @@
   (use-package yasnippet-snippets)
   :config
   (yas-reload-all)
+  (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "snippets"))
   (yas-global-mode 1)
   )
 
