@@ -17,6 +17,8 @@
     (avy-migemo-mode 1)
     )
   )
+(use-package zop-to-char
+  :bind (("M-z" . zop-up-to-char)))
 (use-package ace-window
   ;; x - delete window
   ;; m - swap (move) window

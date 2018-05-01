@@ -82,9 +82,6 @@
     (add-hook 'after-init-hook 'global-emojify-mode)
     (setq emojify-company-tooltips-p t)
     (emojify-set-emoji-styles '(github))
-    (use-package company-emoji
-      :config
-      (add-to-list 'company-backends 'company-emoji)))
   )
 ;; (car (seq-filter (lambda (ls)
 ;;               (string-equal "github" (aref (cadr ls) 2)))
