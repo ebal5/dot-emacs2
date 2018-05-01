@@ -76,8 +76,10 @@
     (my/use-font 14 "Myrica" "Myrica"))
    )
   (use-package emojify
+    :bind
+    (("C-c e" . emojify-insert-emoji))
     :config
-    (add-hook 'after-init-hook #'global-emojify-mode)
+    (add-hook 'after-init-hook 'global-emojify-mode)
     (setq emojify-company-tooltips-p t)
     (emojify-set-emoji-styles '(github))
     (use-package company-emoji
