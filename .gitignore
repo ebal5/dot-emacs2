@@ -10,3 +10,7 @@ elpa/
 /skk-jisyo
 /emojis/
 /irony/
+session.*
+tramp
+/eshell/
+/var/
