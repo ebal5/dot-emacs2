@@ -22,6 +22,8 @@
 	      (directory-files dir t "[0-9][0-9]"))
 	    (directory-files org-directory t "[0-9][0-9][0-9][0-9]"))))))
   (setq org-use-speed-commands t)
+  (setq org-beamer-theme "metropolis")
+  
   :config
   (defhydra my-hydra/org-heading (org-mode-map "C-c")
     "Move Heading"
@@ -60,15 +62,17 @@
 \\setmonofont{IPAGothic}
 \\XeTeXlinebreaklocale \"ja\"
 
-\\usetheme{Madrid}
-\\usecolortheme{whale}
+% \\usetheme{Madrid}
+% \\usetheme{metropolis}
+% \\usecolortheme{whale}
 % \\usecolortheme{dolphin}
 
 \\AtBeginSection[]{
 \\begin{frame}
 \\tableofcontents[currentsection]
 \\end{frame}
-}"
+}
+"
                ("\\section\{%s\}" . "\\section*\{%s\}")
                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
                ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
