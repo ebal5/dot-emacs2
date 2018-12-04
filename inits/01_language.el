@@ -16,7 +16,8 @@
     (progn
       (add-hook 'isearch-mode-hook 'skk-isearch-mode-setup)
       (add-hook 'isearch-mode-end-hook 'skk-isearch-mode-cleanup)
-      (defvar skk-isearch-start-mode 'latin)))
+      (defvar skk-isearch-start-mode 'latin))
+    )
   (defvar skk-large-jisyo (cons (locate-user-emacs-file "skk-jisyo/SKK-JISYO.Le.utf8")
 				'utf-8))
   (defvar skk-extra-jisyo-file-list
@@ -56,7 +57,8 @@
   :if (executable-find "cmigemo")
   :config
   (setq migemo-command "cmigemo")
-  (setq migemo-options '("-q" "-e" "-d /usr/local/share/migemo/utf-8/migemo-dict"))
+  (setq migemo-options '("-q" "--emacs" "-i" "\a"))
+  (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
   (setq migemo-user-dictionary nil)
   (setq migemo-regex-dictionary nil)
   (setq migemo-coding-system 'utf-8-unix)

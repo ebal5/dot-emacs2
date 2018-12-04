@@ -62,11 +62,6 @@
 \\setmonofont{IPAGothic}
 \\XeTeXlinebreaklocale \"ja\"
 
-% \\usetheme{Madrid}
-% \\usetheme{metropolis}
-% \\usecolortheme{whale}
-% \\usecolortheme{dolphin}
-
 \\AtBeginSection[]{
 \\begin{frame}
 \\tableofcontents[currentsection]
