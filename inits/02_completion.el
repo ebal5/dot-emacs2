@@ -16,7 +16,7 @@
    ("C-h l" . counsel-describe-library)
    ("<f2> i" . counsel-info-lookup-symbol)
    ("<f2> u" . counsel-unicode-char)
-   ("C-c k" . counsel-ag)
+   ("C-c k" . counsel-rg)
    ("C-x l" . counsel-locate)
    ("C-c C-r" . ivy-resume)
    :map read-expression-map
