@@ -102,13 +102,13 @@
 \\setsansfont{IPAPGothic}
 \\setmonofont{IPAGothic}
 \\XeTeXlinebreaklocale \"ja\"
-
-\\AtBeginSection[]{
-\\begin{frame}
-\\tableofcontents[currentsection]
-\\end{frame}
+% \\AtBeginSection[]{% セクションスライドを入れる場合？
+% \\begin{frame}
+% \\tableofcontents[currentsection]
+% \\end{frame}
 }
 "
+
                    ("\\section\{%s\}" . "\\section*\{%s\}")
                    ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
                    ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
