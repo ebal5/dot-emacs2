@@ -106,7 +106,7 @@
 % \\begin{frame}
 % \\tableofcontents[currentsection]
 % \\end{frame}
-}
+% }
 "
 
                    ("\\section\{%s\}" . "\\section*\{%s\}")
