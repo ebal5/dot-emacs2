@@ -9,8 +9,8 @@
   I think Vim's keybindings is very smart and fast for
   programming and any other works on Editor.
   
-  But... I like Emacs as Envilonment. Many people think so,
-  there is Spacemacs as I think.
+  But... I like Emacs as Envilonment. As many people thinks so,
+  there is Spacemacs I think.
 
 * File lists...
 
