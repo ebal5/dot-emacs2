@@ -1,8 +1,4 @@
 ;;; Code:
-(defvar my/plantuml-jar-path
-  (expand-file-name "~/bin/plantuml.jar")
-  "Specify plantUML's jar path."
-  )
 (use-package org
   :pin org
   :bind (:map org-mode-map
@@ -89,6 +85,29 @@
                    )
                  )
     (add-to-list 'org-latex-classes
+                 '("ltjsreport"
+                   "\\documentclass[a4paper]{ltjsreport}
+\\usepackage[no-math]{fontspec}
+\\usepackage[unicode,hidelinks,pdfusetitle]{hyperref}
+\\usepackage[ipa]{luatexja-preset}
+\\usepackage{amsmath}
+\\usepackage{txfonts}
+\\usepackage{graphicx}
+\\usepackage{color,xcolor}
+\\usepackage{pdfpages}
+[NO-DEFAULT-PACKAGES]
+[PACKAGES]
+[EXTRA]
+"
+                   ("\\chapter{%s}" . "\\chapter*{%s}")
+                   ("\\section{%s}" . "\\section*{%s}")
+                   ("\\subsection{%s}" . "\\subsection*{%s}")
+                   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                   ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+                   )
+                 )
+    (add-to-list 'org-latex-classes
 	             '("beamer"
 	               "\\documentclass[14pt, cjk, xetex,xcolor=pdftex,dvipsnames,table]{beamer}
 \\usepackage[cm-default]{fontspec}
@@ -151,4 +170,25 @@
   (if (file-exists-p (expand-file-name "~/.texmf/bibtex/bib/papers.bib"))
       (setq reftex-default-bibliography (expand-file-name "~/.texmf/bibtex/bib/papers.bib")))
   )
+
+(let ((puml (expand-file-name "~/bin/plantuml.jar"))
+      (ditaa (expand-file-name "~/bin/jditaa.jar")))
+  (if (file-exists-p puml)
+      (add-to-list 'org-babel-load-languages '(plantuml . t))
+      (defvar my/plantuml-jar-path
+        puml
+        "Specify plantUML's jar path."
+      )
+    )
+  (if (file-exists-p ditaa)
+      (progn
+        (add-to-list 'org-babel-load-languages '(ditaa . t))
+        (setq org-ditaa-jar-path ditaa)
+        )
+      )
+  )
+(add-to-list 'org-babel-load-languages '(shell . t))
+(add-to-list 'org-babel-load-languages '(ruby . t))
+(add-to-list 'org-babel-load-languages '(python . t))
+
 ;;; 11_org.el ends here
