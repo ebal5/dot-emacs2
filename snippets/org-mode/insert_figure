@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: insert_figure
+# key: <F
+# --
+#+CAPTION: $0
+#+Name: $1
+#+Attr_LaTeX: $2

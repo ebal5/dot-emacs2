@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: insert_table
+# key: <t
+# --
+#+CAPTION: $0
+#+NAME: $1
+#+Attr_LaTeX: $2

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Attr_LaTeX
+# key: <AL
+# --
+#+Attr_LaTeX: $0
