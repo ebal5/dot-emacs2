@@ -18,7 +18,7 @@
 	          (directory-files dir t "[0-9][0-9]"))
 	        (directory-files org-directory t "[0-9][0-9][0-9][0-9]"))))))
   (setq org-use-speed-commands t)
-  (setq org-beamer-theme "metropolis")
+  ;; (setq org-beamer-theme "metropolis")
   
   :config
   (defun org-mode-reftex-setup ()
