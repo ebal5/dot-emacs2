@@ -11,5 +11,12 @@
       :config
       (add-to-list 'company-backends (company-mode/backend-with-yas 'company-ycmd))
       )
+    (use-package flycheck-ycmd
+      :config
+      (flycheck-ycmd-setup)
+      (when (not (display-graphic-p))
+        (setq flycheck-indication-mode nil)))
+    (require 'ycmd-eldoc)
+    (add-hook 'ycmd-mode-hook 'ycmd-eldoc-setup)
     ))
 ;;; 20_prog-completion.el ends here
