@@ -1,6 +1,6 @@
 ;;; Code:
 (use-package avy
-  :chords (("jj" . avy-goto-char)
+  :chords (("jc" . avy-goto-char)
 	   ("jl" . avy-goto-line)
 	   ("jk" . avy-goto-word-1))
   :bind (("C-:" . avy-goto-char)
