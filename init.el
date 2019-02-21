@@ -28,6 +28,9 @@
 ;; delete all auto saved files when emacs finished
 (setq delete-auto-save-files t)
 
+;;; *.~ とかのバックアップファイルを作らない
+(setq make-backup-files nil)
+
 ;; setting for dired mode
 (autoload 'wdired "wdired" nil t)
 (add-hook 'dired-load-hook
@@ -178,3 +181,60 @@
     (message "init-loader setting loaded")
     )
   )
+(put 'narrow-to-page 'disabled nil)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(auto-image-file-mode 1)
+ '(beacon-lighter "")
+ '(column-number-mode 1)
+ '(company-dabbrev-downcase nil)
+ '(company-dabbrev-ignore-case (quote nil))
+ '(company-idle-delay 0)
+ '(company-minimum-prefix-length 3)
+ '(company-selection-wrap-around t)
+ '(cyphejor-rules
+   (quote
+    (:upcase
+     ("bookmark" "→")
+     ("buffer" "β")
+     ("diff" "Δ")
+     ("dired" "δ")
+     ("emacs" "ε")
+     ("fundamental" "φ")
+     ("inferior" "i" :prefix)
+     ("interaction" "i" :prefix)
+     ("interactive" "i" :prefix)
+     ("lisp" "λ" :postfix)
+     ("menu" "μ")
+     ("mode" "")
+     ("package" "↓")
+     ("python" "π")
+     ("shell" "sh" :postfix)
+     ("text" "ξ")
+     ("wdired" "↯δ")
+     ("org" "Ω")
+     ("conf" "⚙")
+     ("java" "☕")
+     ("eshell" "εsh"))))
+ '(dired-dwim-target t)
+ '(dired-recursive-copies (quote always))
+ '(dired-recursive-deletes (quote top))
+ '(eldoc-idle-delay 0.4)
+ '(menu-bar-mode nil)
+ '(package-selected-packages
+   (quote
+    (notmuch zop-to-char yatex yatemplate yasnippet-snippets web-mode visual-regexp-steroids use-package-chords undo-tree telephone-line swoop string-edit sphinx-mode sphinx-doc skewer-mode sequential-command rainbow-mode quickrun pp-c-l perspeen ox-pandoc orgit org-present open-junk-file markdown-mode magit-gitflow madhat2r-theme ivy-hydra init-loader gist free-keys flycheck-ycmd flycheck-pos-tip flycheck-irony expand-region exec-path-from-shell emojify emmet-mode dired-hacks-utils diminish ddskk cyphejor counsel-projectile counsel-gtags company-ycmd company-web company-shell company-quickhelp company-irony cargo c-eldoc bm beacon avy-migemo ace-window)))
+ '(scroll-bar-mode nil)
+ '(select-enable-clipboard t)
+ '(send-mail-function (quote mailclient-send-it))
+ '(tool-bar-mode nil)
+ '(use-file-dialog nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
