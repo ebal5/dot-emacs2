@@ -33,7 +33,7 @@
     "Move Heading"
     ("u" outline-up-heading "Parent")
     ("n" outline-next-visible-heading "Next")
-    ("p" outline-previous-visible-heading "Previous"))  
+    ("p" outline-previous-visible-heading "Previous"))
   (with-eval-after-load 'ox-latex
     (add-to-list 'org-latex-classes
 		         '("bxjsarticle"
@@ -72,7 +72,7 @@
 \\usepackage{ascmac}
 \\usepackage{framed}
 \\usepackage{tikz}
-\\usepackage[OT1]{fontenc} 
+\\usepackage[OT1]{fontenc}
 [NO-DEFAULT-PACKAGES]
 [PACKAGES]
 [EXTRA]"
@@ -84,6 +84,28 @@
                    ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
                    )
                  )
+    (add-to-list 'org-latex-classes
+		         '("ltjsarticle"
+		           "\\documentclass[a4paper]{ltjsarticle}
+\\usepackage[no-math]{fontspec}
+\\usepackage[unicode,hidelinks,pdfusetitle]{hyperref}
+\\usepackage[ipa]{luatexja-preset}
+\\usepackage{amsmath}
+\\usepackage{txfonts}
+\\usepackage{graphicx}
+\\usepackage{color,xcolor}
+\\usepackage{pdfpages}
+\\usepackage{color,xcolor}
+\\usepackage{ascmac}
+\\usepackage{tikz}
+[NO-DEFAULT-PACKAGES]
+[PACKAGES]
+[EXTRA]"
+                   ("\\section{%s}" . "\\section*{%s}")
+                   ("\\subsection{%s}" . "\\subsection*{%s}")
+                   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                   ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
     (add-to-list 'org-latex-classes
                  '("ltjsreport"
                    "\\documentclass[a4paper]{ltjsreport}
